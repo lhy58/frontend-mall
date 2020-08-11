@@ -1,0 +1,34 @@
+<van-action-sheet 
+  show="{{ show }}"
+  bind:click-overlay="onCancel"
+  bind:close="onCancel"
+>
+  <view class='sheet_box'>
+    <view class='hd'>
+      <image src="{{ infos.GoodsPictureUrl }}" class="img" />
+      <view class="hd_right">
+        <view class="pre_sale">￥ {{infos.GoodsPriceShop}}</view>
+        <view class="pre_num">已选：{{infos.GoodsSpec || "400g*2"}}</view>
+      </view>
+    </view>
+    <view class="bd">
+      <view class="weight">重量：</view>
+      <view class='select'>{{infos.GoodsSpec || "400g*2"}}</view>
+    </view>
+    <view class="bottom">
+      <view class="num">
+       <view class="num_name">数量：</view>
+       <van-stepper 
+         value="{{ 1 }}"
+         min="0"
+         input-width="40rpx" 
+         button-size="40rpx"
+         bind:change="onChange" 
+        />
+      </view>
+      <view wx:if="{{type==='2'}}" class="btn" bindtap="buynow">去下单</view>
+      <view wx:else class="btn" bindtap="buynow">加入购物车</view>
+    </view>
+
+  </view>
+</van-action-sheet>

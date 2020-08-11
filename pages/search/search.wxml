@@ -1,0 +1,23 @@
+<van-search 
+  v-model="{{ value }}"
+  autofocus='{{true}}'
+  placeholder="请输入搜索关键词" 
+  shape="round"
+  bind:search='onSearch'
+  bind:change='onChange' 
+/>
+<van-tabs
+  sticky="{{true}}"
+  offset-top="0"
+  v-model="{{ active }}" 
+  bind:change="onChange" 
+  swipe-threshold='5'
+  line-width='25'
+  class="index-tabs"
+>
+  <van-tab wx:for="{{tabs}}" title="{{item}}">
+    <view class='box' >
+      内容 {{ index }}
+    </view>
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,35 @@
+<scroll-view class="container">
+  <view class='header'>
+    <van-image fit='cover' round="{{true}}" width="80" height="80" src="{{userinfo.avatarUrl}}" />
+    <view class="login_btn">{{ userinfo.nickName }}</view>
+    <button class='ask_btn_sq' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo"></button>
+  </view>
+  <view class="contai">
+    <view class="box_1">
+      <view class="flex paddingTop" bindtap="onClickAll">
+        <text class="bd_name">我的订单</text>
+        <text class="bd_link">查看全部订单</text>
+        <van-icon name='arrow'/>
+      </view>
+      <view class="flex marginTop">
+        <view class="flex_item" data-type='1' bindtap="onClickTo">
+          <van-icon size="60rpx" name='send-gift-o'/>
+          <view class="bd_text">待付款</view>
+        </view>
+         <view class="flex_item" data-type='2' bindtap="onClickTo">
+          <van-icon size="60rpx" name='paid'/>
+          <view class="bd_text">待发货</view>
+        </view>
+         <view class="flex_item" data-type='3' bindtap="onClickTo">
+          <van-icon size="60rpx" name='gift-o'/>
+          <view class="bd_text">待收货</view>
+        </view>
+         <view class="flex_item" data-type='4' bindtap="onClickTo">
+          <van-icon size="60rpx" name='bill-o'/>
+          <view class="bd_text">售后</view>
+        </view>
+      </view>
+    </view>
+    <view></view>
+  </view>
+</scroll-view>

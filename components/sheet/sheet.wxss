@@ -1,0 +1,73 @@
+.sheet_box {
+  height: 55vh;
+  position: relative;
+}
+.hd {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 30rpx 0 40rpx 0;
+  margin: 0 15px;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.img {
+  width: 180rpx;
+  height: 180rpx;
+}
+.hd_right {
+  padding-left: 30rpx;
+  padding-bottom: 15rpx;
+}
+.pre_sale {
+  color: #d81e06;
+  font-size: 28rpx;
+}
+.pre_num {
+  font-size: 24rpx;
+  color: #a09b9b;
+}
+.bd {
+  padding: 0 15px;
+}
+.weight {
+  color: #c3c3c3;
+  font-size: 24rpx;
+  margin: 30rpx 0 16rpx 0;
+}
+.select {
+  border: 1rpx solid #d81e06;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #d81e06;
+  border-radius: 3rpx;
+  font-size: 24rpx;
+}
+.bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 8rpx;
+}
+.btn {
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: #ee0a24;
+  width: 94%;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #fff;
+  margin: 0 3%;
+}
+.num {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 16rpx;
+}
+.num_name {
+  color: #c3c3c3;
+  font-size: 24rpx;
+}

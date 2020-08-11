@@ -1,0 +1,82 @@
+<!--pages/commodityDetail/commodityDetail.wxml-->
+<scroll-view class="contai" scroll-y>
+  <!--轮播-->
+  <view class="swiper">
+    <swiper 
+      indicator-dots="{{true}}" 
+      autoplay="{{false}}" 
+      interval="{{2000}}" 
+      duration="{{500}}"
+      style="height: {{screenWidth}}px"
+    >
+      <block wx:for="{{swiperImages}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.PictureUrl}}" class="image" style="height: {{screenWidth}}px"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--详情-->
+  <view class="conter">
+    <view class="flex_justify amount">
+      <view>
+        <text class="unit">￥</text>
+        <text class="pre_sale">{{goods.GoodsPriceShop}}</text>
+        <text class="price">￥{{goods.GoodsPriceShop + 20}}</text>
+      </view>
+      <text class="num">已经{{goods.GooodsOrderNum}}件</text>
+    </view>
+    <view class="flex_center">
+      <text class="name">{{goods.GoodsName}}</text>
+      <view class="share">
+        <image src="../../assets/images/share.png" class="icon" />
+        <text class="share_text">分享</text>
+      </view>
+    </view>
+    <van-notice-bar
+      custom-class='notice'
+      text="官方正品  ·全国包邮  ·7天包换"
+      mode="link"
+      backgroundColor="#F6E8E7"
+      color='#E97678'
+      left-icon="info-o"
+      bind:click='onNoticebar'
+    />
+  </view>
+  <view class="line"></view>
+   <!--图片列表-->
+  <van-divider customStyle='width: 30%; margin: 15rpx 35%' contentPosition="center">详情</van-divider>
+  <view class="conter">
+    <block wx:for="{{detailImages}}" wx:key="index">
+      <image src="{{item.PictureUrl}}" class="detail_img" lazy-load='{{true}}' mode='widthFix'/>
+    </block>
+  </view>
+</scroll-view>
+<view class='goods_box'>
+  <van-goods-action>
+    <van-goods-action-icon icon="home-o" text="首页" />
+    <van-goods-action-icon icon="chat-o" text="客服"  open-type="contact" />
+    <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+    <view class="btn btn_shopping" bindtap="addShoppingCart">加入购物车</view>
+    <view class="btn btn_buy" bindtap="buynow">立即购买</view>
+  </van-goods-action>
+</view>
+<van-action-sheet 
+  show="{{ show }}"
+  bind:click-overlay="onCancelMask"
+>
+  
+  <view class='sheet_box'>
+    <view wx:for="{{naticeList}}" class="sheet_item" wx:key='index'>
+      <view class="sheet_item_title">{{item.title}}</view>
+      <view class="sheet_item_text">{{item.text}}</view>
+    </view>
+  </view>
+</van-action-sheet>
+<sheet 
+  id='sheet'
+  show="{{visible}}"
+  type="{{btnType}}"
+  infos="{{goods}}"
+/>
+

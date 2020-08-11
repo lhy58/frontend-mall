@@ -1,0 +1,65 @@
+/* pages/my/my.wxss */
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-color: #eee;
+}
+.ask_btn_sq {
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  height: 80px;
+  background-color: transparent;
+}
+.contai {
+  padding: 0 30rpx;
+}
+.header {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 30rpx 50rpx;
+}
+.login_btn {
+  color: #fff;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+.box_1 {
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-top: -38rpx;
+}
+.paddingTop {
+  padding: 22rpx;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.marginTop {
+  margin-top: 18rpx;
+  padding-bottom: 22rpx;
+}
+.flex_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bd_name {
+  font-weight: 600;
+  font-size: 28rpx;
+  flex: 1;
+}
+.bd_link {
+  font-size: 28rpx;
+  color: #999;
+}
+.bd_text {
+  color: #999;
+  font-size: 28rpx;
+}

@@ -1,0 +1,43 @@
+<!--pages/home/home.wxml-->
+<scroll-view class="container" refresher-enabled='true'>
+  <view class="box">
+    <view wx:for='{{list_1}}' wx:key='idx' class='item'>
+      <lists 
+        id='lists' 
+        width="{{screenWidth - 16}}"
+        imgSrc="{{item.GoodsPictureUrl}}"
+        price="{{item.GoodsPriceShop}}"
+        name="{{item.GoodsName}}"
+      >
+      </lists>
+    </view>
+    <scroll-view scroll-x class="scroll_x" style='width: {{screenWidth - 16}}px'>
+      <view class='list_3'>
+        <view wx:for='{{list_2}}' wx:key='index' class='item' style='width: {{(screenWidth - 16) / 2.5}}px; margin-right: 8px'>
+          <lists 
+            id='lists' 
+            width="{{(screenWidth - 16) / 2.5}}"
+            imgSrc="{{item.GoodsPictureUrl}}"
+            price="{{item.GoodsPriceShop}}"
+            name="{{item.GoodsName}}"
+          >
+          </lists>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='list_2'>
+      <view wx:for='{{list_3}}' wx:key='index' class='item' style='width: {{(screenWidth - 24) / 2}}px; margin-right: {{index % 2 ? 0 : 8}}px'>
+        <lists 
+          id='lists'
+          width="{{(screenWidth - 24) / 2}}"
+          imgSrc="{{item.GoodsPictureUrl}}"
+          price="{{item.GoodsPriceShop}}"
+          name="{{item.GoodsName}}"
+        >
+        </lists>
+      </view>
+    </view>
+
+  </view>
+</scroll-view>
+

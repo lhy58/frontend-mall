@@ -1,0 +1,46 @@
+<!--pages/category/category.wxml-->
+<van-search 
+  placeholder="请输入搜索关键词1" 
+  shape="round"  
+  bind:search='onSearch'
+/>
+<block wx:if="{{tabs.length > 1}}">
+  <van-tabs
+    sticky="{{true}}"
+    offset-top="0"
+    swipeable="{{true}}"
+    animated="{{true}}"
+    active="{{ active }}" 
+    bind:change="onChange" 
+    swipe-threshold='5'
+    bind:scroll="onScroll"
+    nav-left
+    class="index-tabs"
+  >
+    <van-tab wx:for="{{tabs}}" title="{{item.BorderName}}" name="{{item.Id}}" wx:key='index'>
+      <view class='box'>
+        <view wx:if="{{list.length > 0}}" class='list_2'>
+          <view wx:for='{{list}}' wx:key='index' class='item' style='width: {{(screenWidth - 24) / 2}}px; margin-right: {{index % 2 ? 0 : 8}}px'>
+            <lists
+              id='lists' 
+              width="{{(screenWidth - 24) / 2}}"
+              imgSrc="{{item.GoodsPictureUrl}}"
+              price="{{item.GoodsPriceShop}}"
+              name="{{item.GoodsName}}"
+            >  
+            </lists>
+          </view>
+          <view wx:if="{{!isPage}}" class="bottom">
+            <text>--没有更多数据了--</text>
+          </view>
+        </view>
+        <!--
+        <view wx:elif="{{isPage}}" class="empty">
+          <text>--暂无数据--</text>
+        </view>
+        -->
+      </view>
+    </van-tab>
+  </van-tabs>
+</block>
+

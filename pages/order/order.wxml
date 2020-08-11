@@ -1,0 +1,35 @@
+<van-tabs
+  sticky="{{true}}"
+  offset-top="0"
+  active="{{ tabActive }}" 
+  bind:change="onChange" 
+  swipe-threshold='5'
+  line-width='25'
+  class="index-tabs"
+>
+  <van-tab title="全部">
+    <view class='box' >
+      内容 {{ tabActive }}
+    </view>
+  </van-tab>
+  <van-tab title="待付款">
+    <view class='box' >
+      内容 {{ index }}
+    </view>
+  </van-tab>
+  <van-tab title="待发货">
+    <view class='box' >
+      内容 {{ index }}
+    </view>
+  </van-tab>
+  <van-tab title="待收货">
+    <view class='box' >
+      内容 {{ index }}
+    </view>
+  </van-tab>
+  <van-tab title="已完成">
+    <view class='box' >
+      内容 {{ index }}
+    </view>
+  </van-tab>
+</van-tabs>

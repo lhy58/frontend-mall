@@ -1,0 +1,7 @@
+<view class="lists" bindtap='onClick'>
+  <image src="{{ imgSrc }}" class="img" style='width: {{width}}px; height: {{width}}px' />
+  <view class='by'>
+    <view class='text'>{{name}}</view>
+    <view class='amount'>￥ {{price}}</view>
+  </view>
+</view>

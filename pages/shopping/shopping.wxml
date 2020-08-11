@@ -1,0 +1,27 @@
+<!--pages/shopping/shopping.wxml-->
+<scroll-view>
+  <view class="empty">
+    <image class="img" src='../../assets/images/empty.jpg' />
+    <view class="empty_text">购物车空空如也，去逛逛吧~</view>
+    <van-button bind:click="onClick" type="primary" round='true' color='#d81e06' size="small">去逛逛</van-button>
+  </view>
+  <view class="recommend">
+    <view class='separate'>
+      <text class='line'/>
+      <text class='sep_text'>为你推荐</text>
+      <text class='line' />
+    </view>
+    <view class='list_2'>
+      <view wx:for='{{list}}' wx:key='index' class='item' style='width: {{(screenWidth - 24) / 2}}px; margin-right: {{index % 2 ? 0 : 8}}px'>
+        <lists 
+          id='lists' 
+          width="{{(screenWidth - 24) / 2}}"
+          imgSrc="{{item.GoodsPictureUrl}}"
+          price="{{item.GoodsPriceShop}}"
+          name="{{item.GoodsName}}"
+        >
+        </lists>
+      </view>
+    </view>
+  </view>
+</scroll-view>

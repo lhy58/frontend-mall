@@ -1,0 +1,24 @@
+.lists {
+  background-color: '#fff';
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px 8px #e2e1e1;
+  width: '100%';
+  height: auto;
+}
+.by {
+  padding: 15rpx;
+}
+.text{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 26rpx;
+}
+.amount {
+  color: #d81e06;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  margin-top: 12rpx;
+  font-weight: 500;
+}
