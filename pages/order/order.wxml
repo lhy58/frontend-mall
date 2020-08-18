@@ -7,27 +7,46 @@
   line-width='25'
   class="index-tabs"
 >
-  <van-tab title="全部">
+  <van-tab title="全部" custom-class="tab">
     <view class='box' >
-      内容 {{ tabActive }}
+      <view class='card' wx:for="{{list}}" wx:key="index">
+        <view class="header">
+          <view class='header_tt'>订单编号：13454541321564</view>
+          <view class='header_status'>交易关闭</view>
+        </view>
+        <van-card
+          num="2"
+          tag="标签"
+          price="10.00"
+          desc="描述信息"
+          title="商品标题"
+          thumb="{{ imageURL }}"
+          custom-class='card_item'
+        >
+          <view slot="footer">
+            <van-button custom-class='card_btn' size="mini" round="true">删除订单</van-button>
+            <van-button custom-class='card_btn' size="mini" round="true">确认收货</van-button>
+          </view>
+        </van-card>
+      </view>
     </view>
   </van-tab>
-  <van-tab title="待付款">
+  <van-tab title="待付款" custom-class="tab">
     <view class='box' >
       内容 {{ index }}
     </view>
   </van-tab>
-  <van-tab title="待发货">
+  <van-tab title="待发货" custom-class="tab">
     <view class='box' >
       内容 {{ index }}
     </view>
   </van-tab>
-  <van-tab title="待收货">
+  <van-tab title="待收货" custom-class="tab">
     <view class='box' >
       内容 {{ index }}
     </view>
   </van-tab>
-  <van-tab title="已完成">
+  <van-tab title="已完成" custom-class="tab">
     <view class='box' >
       内容 {{ index }}
     </view>

@@ -6,6 +6,7 @@ Page({
    */
   data: {
     tabActive: 0,
+    list:[1,2],
   },
 
   /**

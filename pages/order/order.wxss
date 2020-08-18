@@ -1,4 +1,49 @@
-/* pages/order/order.wxss */
 .index-tabs {
-  
+  background-color: #fcfcfc;
+}
+.tab {
+  background-color: #fcfcfc;
+  height: 98vh !important;
+}
+.card {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.card_item {
+  background-color: #fff !important;
+}
+.card_btn {
+  width: auto !important;
+  padding: 0 30rpx !important;
+  margin-left: 20rpx !important;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx;
+  position: relative;
+}
+.header_tt {
+  font-size: 22rpx;
+  color: #333;
+}
+.header_status {
+  color: red;
+  font-size: 24rpx;
+}
+.header::after {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  content: " ";
+  pointer-events: none;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 15px;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
 }

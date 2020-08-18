@@ -30,6 +30,11 @@
         </view>
       </view>
     </view>
-    <view></view>
+    <view class='box_2'>
+      <van-cell-group>
+        <van-cell title="收货地址" icon="location-o" is-link />
+        <van-cell title="我的客服" icon="location-o" is-link value="工作时间 9:00-22:00" />
+      </van-cell-group>
+    </view>
   </view>
 </scroll-view>
