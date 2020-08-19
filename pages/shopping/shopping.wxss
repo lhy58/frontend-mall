@@ -40,3 +40,71 @@
 .item {
   margin-bottom: 20rpx;
 }
+
+
+/**内容列表**/
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.box {
+  background-color: #fcfcfc;
+  height: 100vh;
+}
+.cell {
+  height: 210rpx;
+}
+.group {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-top: 20rpx;
+}
+.group_right {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.group_img {
+  width: 180rpx;
+  height: 180rpx;
+}
+.group_bd {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.group_name {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  flex: 1;
+  /* overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+}
+.cell_right {
+  width: 65px;
+  height: 240rpx;
+  background-color: red;
+  text-align: center;
+  line-height: 240rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.pre_sale {
+  color: #d81e06;
+  font-size: 30rpx;
+}
+.tag {
+  background-color: #fcfcfc;
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0 20rpx;
+  color: #ccc;
+  font-size: 22rpx;
+  display: inline-block;
+}
+.flex_ft {
+  flex: 1;
+  margin-top: 40rpx;
+}

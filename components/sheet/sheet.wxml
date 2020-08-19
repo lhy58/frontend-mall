@@ -27,7 +27,7 @@
         />
       </view>
       <view wx:if="{{type==='2'}}" class="btn" bindtap="buynow">去下单</view>
-      <view wx:else class="btn" bindtap="buynow">加入购物车</view>
+      <view wx:else class="btn" bindtap="addCart">加入购物车</view>
     </view>
 
   </view>

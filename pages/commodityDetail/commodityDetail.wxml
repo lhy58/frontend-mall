@@ -78,5 +78,6 @@
   show="{{visible}}"
   type="{{btnType}}"
   infos="{{goods}}"
+  bind:addCart="addCart"
 />
 

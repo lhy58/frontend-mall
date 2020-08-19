@@ -1,4 +1,5 @@
 //app.js
+const util = require('./utils/util.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -32,6 +33,11 @@ App({
         }
       }
     })
+    //初始化购物车
+    this.timer = setInterval(function () {
+      // that.scanCart(that)
+      util.scanCart()
+    }, 1000);
   },
   globalData: {
     userInfo: null,

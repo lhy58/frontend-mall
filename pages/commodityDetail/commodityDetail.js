@@ -50,6 +50,11 @@ Page({
     this.setData({ visible: true, btnType: '1'})
   },
 
+  addCart: function(conut){
+    console.log('conut111', conut)
+    // util.scanCart();
+  },
+
   // 立即购买
   buynow: function(){
     this.setData({ visible: true, btnType: '2' }) 

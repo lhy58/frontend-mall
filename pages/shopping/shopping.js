@@ -9,7 +9,9 @@ Page({
    */
   data: {
     list: [],
-    screenWidth: app.globalData.screenWidth
+    screenWidth: app.globalData.screenWidth,
+    cartList: [1,2,3],
+    checked: true,
   },
 
   onClick: function() {
@@ -25,6 +27,11 @@ Page({
         this.setData({ list: res.data.lists })
       }
     })
+  },
+
+  // 全选
+  onCheckAll: function (e) {
+    this.setData({checked: e.detail})
   },
 
   /**
