@@ -1,0 +1,27 @@
+<scroll-view class="address">
+  <view wx:for="{{list}}" wx:key="index" class="items">
+    <view class='footer'>
+      <van-checkbox value="{{ index===0 }}" checked-color="#ee0a24" bind:change="onCheckAll">
+        {{index===0? '当前默认地址' : '设置默认'}}
+      </van-checkbox>
+      <view class='delete' bindtap="onDelete">删除</view>
+    </view>
+    <view class='body'>
+      <text class="name">姓名</text>
+      <text class="phone">12345456478</text>
+    </view>
+    <view class="ress">安徽发挥地方哈士大夫卡闪电发货</view>
+  </view>
+  <view class="btn">
+    <van-button 
+      custom-class='btn_text' 
+      bind:click="onBtn" 
+      type="primary" 
+      round='true' 
+      color='#d81e06' 
+      size="normal"
+    >
+      添加地址
+    </van-button>
+  </view>
+</scroll-view>

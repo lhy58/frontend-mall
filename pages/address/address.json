@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新增地址",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

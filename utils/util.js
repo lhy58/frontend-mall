@@ -67,7 +67,22 @@ function scanCart(that) {
   for (let index in cart) {
      cartnumber += cart[index].num
   }
+  // 没有底部导航栏时，不执行wx.setTabBarBadge方法
+  let pages = getCurrentPages()
+  if (pages.length) {
+    let currPage = pages[pages.length - 1]
+    let routes = [
+      'pages/my/my',
+      'pages/home/home',
+      'pages/category/category',
+      'pages/shopping/shopping'
+    ]
+    if(routes.indexOf(currPage.route) === -1){
+      return false
+    }
+  };
   
+
   if (cart.length) {     //判断购物车的数量个数，购物车如果为空就走else
      wx.setTabBarBadge({ //购物车不为空 ，给购物车的tabar右上角添加购物车数量标志
         index: 2,				 //标志添加位置

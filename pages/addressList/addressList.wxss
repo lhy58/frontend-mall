@@ -1,0 +1,58 @@
+.address {
+  height: 100vh;
+}
+.items {
+  padding: 30rpx;
+  position: relative;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer::after {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  content: " ";
+  pointer-events: none;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 15px;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+.delete {
+  color: red;
+  font-size: 24rpx;
+}
+.body {
+  margin-top: 20rpx;
+
+}
+.name {
+  font-size: 30rpx;
+  color: #333;
+}
+.phone {
+  color: #c3c3c3;
+  font-size: 22rpx;
+  padding-left: 30rpx;
+}
+.ress {
+  color: #333;
+  font-size: 28rpx;
+}
+.btn {
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;
+  left: 5%;
+}
+.btn_text {
+  width: 90% !important;
+}

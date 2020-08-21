@@ -1,0 +1,55 @@
+<view class="address">
+  <van-field
+    value="{{ username }}"
+    label="收 货 人"
+    placeholder="请输入用户名"
+  />
+  <van-field
+    value="{{ phone }}"
+    label="联系电话"
+    placeholder="请输入联系电话"
+    use-button-slot
+  >
+    <button 
+      open-type="getPhoneNumber" 
+      class='btn_phone' 
+      slot="button" 
+      size="small" 
+      bindgetphonenumber="getPhoneNumber"
+    >
+      微信授权电话
+    </button>
+  </van-field>
+  <van-field
+    value="{{ phone }}"
+    label="所在地区"
+    placeholder="请输入省，市，区"
+    use-button-slot
+  > 
+    <button open-type="getUserInfo" class='btn_ress' slot="button" size="small">
+      <van-icon name="close" />
+      定位
+    </button>
+  </van-field>
+  <van-field
+    value="{{ address }}"
+    label="详细地址"
+    placeholder="请输入详细地址"
+  />
+  <view class="checks" bindtap="onCheckbox">
+    <label class="ck_label">设为默认地址</label>
+    <van-checkbox value="{{ checkbox }}" checked-color="#ee0a24" />
+  </view>
+  <view class="btn">
+    <van-button 
+      custom-class='btn_text' 
+      bind:click="onBtn" 
+      type="primary" 
+      round='true' 
+      color='#d81e06' 
+      size="normal"
+    >
+      保存
+    </van-button>
+  </view>
+</view>
