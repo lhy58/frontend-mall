@@ -1,1 +1,11 @@
 /* pages/search/search.wxss */
+.box {
+  background-color: #fcfcfc;
+  height: 100%;
+  padding: 28rpx;
+}
+.items {
+  margin-bottom: 28rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}

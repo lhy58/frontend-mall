@@ -1,8 +1,9 @@
 {
+  "navigationBarTitleText": "搜索",
   "usingComponents": {
     "van-tabs": "@vant/weapp/tabs/index",
     "van-tab": "@vant/weapp/tab/index",
     "van-search": "@vant/weapp/search/index",
-    "lists": "../../components/lists/lists"
+    "row-lists": "../../components/row-lists/index"
   }
 }

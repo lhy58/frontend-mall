@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/address/address",
+    "pages/search/search",
     "pages/my/my",
+    "pages/address/address",
     "pages/addressList/addressList",
     "pages/shopping/shopping",
     "pages/order/order",
     "pages/home/home",
     "pages/commodityDetail/commodityDetail",
     "pages/category/category",
-    "pages/search/search",
+    
     "pages/index/index",
     "pages/logs/logs"
   ],

@@ -1,0 +1,12 @@
+<view class="lists" bindtap='onClick'>
+  <image src="{{ item.GoodsPictureUrl }}" class="img" />
+  <view class='by'>
+    <view class='text'>{{item.GoodsName}}</view>
+    <view class="ft">
+      <view class='amount'>￥ {{item.GoodsPriceShop}}</view>
+      <view class="ft_icon">
+        <image src="../../assets/images/add-shopping.png" class="icon" />
+      </view>
+    </view>
+  </view>
+</view>

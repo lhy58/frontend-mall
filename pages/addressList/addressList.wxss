@@ -1,5 +1,7 @@
 .address {
-  height: 100vh;
+  width: '100%';
+  height: '100%';
+  margin-bottom: 120rpx;
 }
 .items {
   padding: 30rpx;
@@ -29,6 +31,14 @@
 .delete {
   color: red;
   font-size: 24rpx;
+  padding-left: 18rpx;
+}
+.edit {
+  line-height: 24rpx;
+  color: #c3c3c3;
+  font-size: 24rpx;
+  border-right: 1rpx solid #c3c3c3;
+  padding-right: 18rpx;
 }
 .body {
   margin-top: 20rpx;
@@ -49,9 +59,10 @@
 }
 .btn {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 30rpx;
   left: 5%;
+  z-index: 99;
 }
 .btn_text {
   width: 90% !important;

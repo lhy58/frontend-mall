@@ -6,5 +6,14 @@ module.exports = {
   wx_category_type: WxApiURL + '/api/border/list', // 分类
   wx_category_list: WxApiURL + '/api/goods/wechat/classify?', // 分类列表
   wx_hot_sell: WxApiURL + '/api/goods/wechat/hot/sell', // 推荐
-  wx_commodity_detail: WxApiURL + '/api/goods/wechat/detail?' // 商品详情
+  wx_commodity_detail: WxApiURL + '/api/goods/wechat/detail?', // 商品详情
+  wx_auth_login: WxApiURL + '/wx/auth?', // 获取token
+  wx_token: WxApiURL + '/auth', // 调式token
+  wx_address_list: WxApiURL + '/api/address/list?', //地址列表
+  wx_address_add: WxApiURL + '/api/address/add', // 新增地址
+  wx_address_edit: WxApiURL + '/api/address/add', // 修改地址
+  wx_address_delete: WxApiURL + '/api/address/delete?', // 删除地址
+  wx_address_default: WxApiURL + '/api/address/default?', // 设置默认
+  wx_address: WxApiURL + '/api/address?', // 查询收货地址
+  wx_search: WxApiURL + '/api/goods/wechat/search?', // 搜索列表
 }

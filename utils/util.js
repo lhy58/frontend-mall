@@ -1,3 +1,5 @@
+// const user = require('./user.js')
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -24,8 +26,9 @@ function request(url, data = {}, method = 'GET') {
       data: data,
       method: method,
       header: {
-        'Content-Type': 'application/json'
-        //  'X-Litemall-Token': wx.getStorageSync('token')
+        'Content-Type': 'application/json',
+        'Authorization': wx.getStorageSync('token')
+        //'X-Litemall-Token': wx.getStorageSync('token')
       },
       success: function (res) {
         if (res.statusCode == 200) {
@@ -37,6 +40,8 @@ function request(url, data = {}, method = 'GET') {
             } catch (e) {
               // Do something when catch error
             }
+            // 重新登录
+            // user.loginByWeixin()
             // 切换到登录页面
             wx.navigateTo({
               url: ''
@@ -82,7 +87,6 @@ function scanCart(that) {
     }
   };
   
-
   if (cart.length) {     //判断购物车的数量个数，购物车如果为空就走else
      wx.setTabBarBadge({ //购物车不为空 ，给购物车的tabar右上角添加购物车数量标志
         index: 2,				 //标志添加位置

@@ -1,0 +1,54 @@
+.lists {
+  background-color: '#fff';
+  border-radius: 4px;
+  width: '100%';
+  height: auto;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.by {
+  padding-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.img {
+  width: 240rpx;
+  height: 240rpx;
+}
+.ft {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 26rpx;
+}
+.amount {
+  color: #d81e06;
+  font-size: 30rpx;
+  font-weight: 500;
+  flex: 1;
+}
+.ft_icon {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 32rpx;
+  height: 32rpx;
+}

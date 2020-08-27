@@ -3,11 +3,15 @@
     value="{{ username }}"
     label="收 货 人"
     placeholder="请输入用户名"
+    bind:change="onChangeName"
   />
   <van-field
     value="{{ phone }}"
     label="联系电话"
     placeholder="请输入联系电话"
+    bind:change="onChangePhone"
+    bind:blur="onBlur"
+    error-message="{{phoneErr}}"
     use-button-slot
   >
     <button 
@@ -21,20 +25,22 @@
     </button>
   </van-field>
   <van-field
-    value="{{ phone }}"
+    value="{{ region }}"
     label="所在地区"
     placeholder="请输入省，市，区"
+    bind:change="onChangeRegion"
     use-button-slot
   > 
-    <button open-type="getUserInfo" class='btn_ress' slot="button" size="small">
+    <!-- <button open-type="getUserInfo" class='btn_ress' slot="button" size="small">
       <van-icon name="close" />
       定位
-    </button>
+    </button> -->
   </van-field>
   <van-field
     value="{{ address }}"
     label="详细地址"
     placeholder="请输入详细地址"
+    bind:change="onChangeAddress"
   />
   <view class="checks" bindtap="onCheckbox">
     <label class="ck_label">设为默认地址</label>
