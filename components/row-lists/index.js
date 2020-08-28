@@ -21,10 +21,13 @@ Component({
    */
   methods: {
     onClick () {
-      console.log('123123')
       wx.navigateTo({
         url: `/pages/commodityDetail/commodityDetail`,
       })
+    },
+    onShow(){
+      console.log('点击cow')
+      this.triggerEvent("onShow", this.data.item)
     },
     _error() {
       //触发取消回调 triggerEvent 触发回调事件 bingd:error 触发error,我们在这边可以打印this中可以找到属性triggerEvent 在属性里面可以找到回调的方法

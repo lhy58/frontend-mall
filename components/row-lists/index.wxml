@@ -4,7 +4,7 @@
     <view class='text'>{{item.GoodsName}}</view>
     <view class="ft">
       <view class='amount'>￥ {{item.GoodsPriceShop}}</view>
-      <view class="ft_icon">
+      <view class="ft_icon" catchtap ="onShow">
         <image src="../../assets/images/add-shopping.png" class="icon" />
       </view>
     </view>

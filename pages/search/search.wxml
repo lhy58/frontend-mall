@@ -10,7 +10,7 @@
   sticky="{{true}}"
   offset-top="0"
   v-model="{{ active }}" 
-  bind:change="onChangeTabs" 
+  bind:change="onChangeTabs"
   swipe-threshold='5'
   line-width='25'
   class="index-tabs"
@@ -20,9 +20,18 @@
       <view wx:for='{{list}}' wx:key='index' class="items">
         <row-lists
           id='row-lists' 
-          item="{{item}}"  
+          item="{{item}}"
+          bind:onShow="addCartShow"
         />
       </view>
+      <van-divider wx:if="{{noMore}}" contentPosition="center" >没有了</van-divider>
     </view>
   </van-tab>
 </van-tabs>
+<sheet 
+  id='sheet'
+  show="{{visible}}"
+  type="1"
+  infos="{{infos}}"
+  bind:addCart="addCart"
+/>
