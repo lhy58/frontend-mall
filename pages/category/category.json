@@ -4,6 +4,7 @@
     "van-tabs": "@vant/weapp/tabs/index",
     "van-tab": "@vant/weapp/tab/index",
     "van-search": "@vant/weapp/search/index",
-    "lists": "../../components/lists/lists"
+    "lists": "../../components/lists/lists",
+    "sheet": "../../components/sheet/sheet"
   }
 }

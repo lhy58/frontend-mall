@@ -1,6 +1,7 @@
 //app.js
 const util = require('./utils/util.js')
 const user = require('./utils/user')
+const cart = require('./utils/cart')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -15,7 +16,12 @@ App({
       }
     })
     // user.loginByWeixin()
-    user.loginTestToken()
+    user.loginTestToken().then(res => {
+      // 获取购物车列表
+      cart.getCartList()
+    }).catch(err => {
+      console.log('获取token失败！')
+    })
     // 获取用户信息
     wx.getSetting({
       success: res => {

@@ -16,6 +16,9 @@ Page({
   },
 
   getHomeList: function() {
+    wx.showLoading({
+      title: '正在加载...',
+    })
     util.request(api.wx_home).then(res => {
       if (res.data && res.data.lists){
         this.setData({
@@ -24,6 +27,7 @@ Page({
           list_3: res.data.lists.filter(item => item['GoodsOrder'] === 3),
         })
       }
+      wx.hideLoading()
     })
   },
 

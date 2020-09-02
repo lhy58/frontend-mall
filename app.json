@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/search/search",
     "pages/my/my",
     "pages/address/address",
     "pages/addressList/addressList",
@@ -9,7 +8,7 @@
     "pages/home/home",
     "pages/commodityDetail/commodityDetail",
     "pages/category/category",
-    
+    "pages/search/search",
     "pages/index/index",
     "pages/logs/logs"
   ],

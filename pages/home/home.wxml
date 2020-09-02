@@ -5,9 +5,7 @@
       <lists 
         id='lists' 
         width="{{screenWidth - 16}}"
-        imgSrc="{{item.GoodsPictureUrl}}"
-        price="{{item.GoodsPriceShop}}"
-        name="{{item.GoodsName}}"
+        item="{{item}}"
       >
       </lists>
     </view>
@@ -17,9 +15,7 @@
           <lists 
             id='lists' 
             width="{{(screenWidth - 16) / 2.5}}"
-            imgSrc="{{item.GoodsPictureUrl}}"
-            price="{{item.GoodsPriceShop}}"
-            name="{{item.GoodsName}}"
+            item="{{item}}"
           >
           </lists>
         </view>
@@ -30,9 +26,7 @@
         <lists 
           id='lists'
           width="{{(screenWidth - 24) / 2}}"
-          imgSrc="{{item.GoodsPictureUrl}}"
-          price="{{item.GoodsPriceShop}}"
-          name="{{item.GoodsName}}"
+          item="{{item}}"
         >
         </lists>
       </view>

@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../utils/util.js')
 const api = require('../../utils/api.js')
+const cart = require('../../utils/cart')
 Page({
 
   /**
@@ -18,6 +19,8 @@ Page({
     active: 0,
     isPage: true,
     page: 1, // 分页
+    visible: false,
+    infos: {}, // 购物车展示信息
   },
 
   getSystemInfo: function(){
@@ -96,7 +99,42 @@ Page({
     },()=>{
       this.getList()
     })
-    
+  },
+
+  // 购物车弹框
+  addCartShow: function(e){
+    this.setData({ visible: true, infos: e.detail })
+  },
+
+  // 加入购物车
+  addCart: function(e){
+    const { infos } = this.data
+    console.log('infos', infos)
+    util.request(api.wx_cart_add, {
+      goodsId: infos.Id,
+      goodsNumber: e.detail,
+    }, 'POST').then(res => {
+      if (res.code === 200) {
+        wx.showToast({
+          title: '添加成功！',
+          icon: 'none'
+        })
+        // 刷新购物车数量
+        cart.getCartList()
+        // 更新购物车选中状态
+        cart.setCartCheckbox(infos)
+      }else {
+        wx.showToast({
+          title: '操作失败！',
+          icon: 'none'
+        })
+      }
+    }).catch(err => {
+      wx.showToast({
+        title: '操作失败！',
+        icon: 'none'
+      })
+    })
   },
 
   /**

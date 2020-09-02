@@ -1,39 +1,44 @@
-<!--pages/shopping/shopping.wxml-->
 <scroll-view>
   <view wx:if="{{cartList.length > 0}}" class='box'>
-    <van-swipe-cell right-width="{{ 65 }}" custom-class="cell">
-      <van-cell-group custom-class="group flex">
-        <van-checkbox value="{{ checked }}" checked-color="#ee0a24" bind:change="onCheckAll" />
-        <view class="group_right flex">
-          <image class="group_img" src='../../assets/images/empty.jpg' />
-          <view class="group_bd">
-            <view class="group_name">阿斯加德开放空间是水电费h大师傅好水电费水电费</view>
-            <view class="tag">200ml</view>
-            <view class="flex flex_ft">
-              <view class="pre_sale">￥ 12</view>
-              <van-stepper 
-                value="{{ 1 }}"
-                min="0"
-                input-width="40rpx" 
-                button-size="40rpx"
-                bind:change="onChange" 
-              />
+    <block wx:for="{{cartList}}" wx:key="Id">
+      <van-swipe-cell right-width="{{ 65 }}" custom-class="cell">
+        <van-cell-group custom-class="group flex">
+          <van-checkbox value="{{ checkedIds[item.Id] }}" checked-color="#ee0a24" data-item="{{item}}" bind:change="onCheckbox" />
+          <view class="group_right flex">
+            <image class="group_img" src='../../assets/images/empty.jpg' />
+            <view class="group_bd">
+              <view class="group_name">{{item.GoodsName}}</view>
+              <view class="tag">200ml</view>
+              <view class="flex flex_ft">
+                <view class="pre_sale">￥{{item.GoodsPriceShop}}</view>
+                <van-stepper
+                  data-item="{{item}}" 
+                  value="{{item.GoodsNumber}}"
+                  max="99"
+                  input-width="40rpx" 
+                  button-size="40rpx"
+                  bind:change="onChange" 
+                />
+              </view>
             </view>
           </view>
-        </view>
-      </van-cell-group>
-      <view slot="right" class="cell_right">删除</view>
-    </van-swipe-cell>
+        </van-cell-group>
+        <view slot="right" class="cell_right" catchtap="onCartDelete" data-item="{{item}}">删除</view>
+      </van-swipe-cell>
+    </block>
+
     <van-submit-bar
-      price="{{ 3050 }}"
+      price="{{ priceSum }}"
       button-text="提交订单"
       bind:submit="onSubmit"
+      disabled="{{priceSum===0}}"
     >
       <van-checkbox value="{{ checked }}" checked-color="#ee0a24" bind:change="onCheckAll">
         全选
       </van-checkbox>
     </van-submit-bar>
   </view>
+  <!-- 为你推荐 -->
   <block wx:else>
     <view class="empty">
       <image class="img" src='../../assets/images/empty.jpg' />
@@ -51,9 +56,7 @@
           <lists 
             id='lists' 
             width="{{(screenWidth - 24) / 2}}"
-            imgSrc="{{item.GoodsPictureUrl}}"
-            price="{{item.GoodsPriceShop}}"
-            name="{{item.GoodsName}}"
+            item="{{item}}"
           >
           </lists>
         </view>

@@ -24,9 +24,9 @@
             <lists
               id='lists' 
               width="{{(screenWidth - 24) / 2}}"
-              imgSrc="{{item.GoodsPictureUrl}}"
-              price="{{item.GoodsPriceShop}}"
-              name="{{item.GoodsName}}"
+              item="{{item}}"
+              isCart='true'
+              bind:onShow="addCartShow"
             >  
             </lists>
           </view>
@@ -43,4 +43,11 @@
     </van-tab>
   </van-tabs>
 </block>
+<sheet 
+  id='sheet'
+  show="{{visible}}"
+  type="1"
+  infos="{{infos}}"
+  bind:addCart="addCart"
+/>
 

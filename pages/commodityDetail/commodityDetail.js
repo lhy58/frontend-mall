@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../utils/util.js')
 const api = require('../../utils/api.js')
+const cart = require('../../utils/cart')
 Page({
 
   /**
@@ -15,6 +16,7 @@ Page({
     show: false,
     visible: false,
     btnType: '',// 1-加入购物车，2-立即购买
+    cartNum: 0, // 购物车数量
     naticeList: [
       { title: '权益保障', text: '' },
       { title: '官方正品', text: '官方品牌授权店铺，如有假货，店铺承担责任赔偿' },
@@ -24,14 +26,13 @@ Page({
   },
 
   // 列表
-  getDetail: function () {
+  getDetail: function (id) {
     wx.showLoading({
       title: '正在加载...',
     })
     util.request(api.wx_commodity_detail, {
-      id: 1,
+      id: id,
     }).then(res => {
-      console.log('res', res)
       if (res.data) {
         this.setData({
           swiperImages: res.data.carouselPictures || [],
@@ -50,9 +51,36 @@ Page({
     this.setData({ visible: true, btnType: '1'})
   },
 
-  addCart: function(conut){
-    console.log('conut111', conut)
-    // util.scanCart();
+  addCart: function(e){
+    const { goods } = this.data
+    util.request(api.wx_cart_add, {
+      goodsId: goods.Id,
+      goodsNumber: e.detail,
+    }, 'POST').then(res => {
+      if (res.code === 200) {
+        wx.showToast({
+          title: '添加成功！',
+          icon: 'none'
+        })
+        // 刷新购物车数量
+        cart.getCartList().then(res => {
+          if(res.code === 200 && res.data.lists){
+            this.setData({cartNum: res.data.lists.length})
+          }
+        })
+        cart.setCartCheckbox(goods)
+      }else {
+        wx.showToast({
+          title: '操作失败！',
+          icon: 'none'
+        })
+      }
+    }).catch(err => {
+      wx.showToast({
+        title: '操作失败！',
+        icon: 'none'
+      })
+    })
   },
 
   // 立即购买
@@ -74,10 +102,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDetail()
+    this.getDetail(options.id)
     wx.setNavigationBarTitle({
       title: "详情",
     })
+    const cart = wx.getStorageSync("cart") || [];
+    if(cart.length > 0){
+      this.setData({cartNum: cart.length})
+    }
   },
 
   /**

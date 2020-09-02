@@ -24,7 +24,7 @@
           bind:onShow="addCartShow"
         />
       </view>
-      <van-divider wx:if="{{noMore}}" contentPosition="center" >没有了</van-divider>
+      <van-divider wx:if="{{noMore}}" contentPosition="center" >没有更多</van-divider>
     </view>
   </van-tab>
 </van-tabs>
