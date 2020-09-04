@@ -51,7 +51,7 @@
 }
 .box {
   background-color: #fcfcfc;
-  height: 100vh;
+  margin-bottom: 120rpx;
 }
 .cell {
   height: 210rpx;

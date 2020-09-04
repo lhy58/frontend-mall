@@ -9,6 +9,7 @@
     "pages/commodityDetail/commodityDetail",
     "pages/category/category",
     "pages/search/search",
+    "pages/pay/pay",
     "pages/index/index",
     "pages/logs/logs"
   ],

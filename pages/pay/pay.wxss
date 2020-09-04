@@ -1,0 +1,77 @@
+.payBox {
+  padding: 28rpx;
+}
+.cell {
+  display: flex;
+  align-items: center;
+}
+.group {
+  margin-top: 28rpx;
+  border-radius: 4rpx;
+  margin-bottom: 100rpx;
+}
+.items {
+  margin-top: 28rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.lists {
+  background-color: '#fff';
+  border-radius: 4px;
+  width: '100%';
+  height: auto;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.by {
+  padding-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.img {
+  width: 200rpx;
+  height: 200rpx;
+}
+.ft {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text{
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 26rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.amount {
+  color: #d81e06;
+  font-size: 30rpx;
+  font-weight: 500;
+  flex: 1;
+}
+.num {
+  color: #c3c3c3;
+  font-size: 26rpx;
+}
+
+.tag {
+  background-color: #fcfcfc;
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0 20rpx;
+  color: #ccc;
+  font-size: 22rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+}

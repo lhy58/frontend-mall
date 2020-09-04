@@ -1,0 +1,42 @@
+<view class="payBox">
+  <van-cell-group>
+    <van-cell 
+      custom-class='cell' 
+      icon="shop-o" 
+      is-link
+      link-type="navigateTo"
+      url="/pages/addressList/addressList"
+      border="{{ false }}"
+    >
+      <view slot="title">
+        <view class="van-cell-text">旧城 13245124546</view>
+        <van-tag type="danger">爱的世界圣诞节疯狂送积分扣水电费</van-tag>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <view wx:for='{{list}}' wx:key='index' class="items">
+    <view class="lists">
+      <image src="{{ item.GoodsPictureUrl }}" class="img" />
+      <view class='by'>
+        <view>
+          <view class='text'>{{item.GoodsName}}</view>
+          <view class="tag">200ml</view>
+        </view>
+        <view class="ft">
+          <view class='amount'>￥ {{item.GoodsPriceShop}}</view>
+          <view class="num">X {{item.GoodsNumber}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-cell-group custom-class='group' >
+    <van-cell title="运费" value="免运费" border="{{ false }}"/>
+  </van-cell-group>
+</view>
+<van-submit-bar
+  label="应付金额"
+  price="{{ 12323 }}"
+  button-text="立即支付"
+  bind:submit="onSubmit"
+  disabled="{{priceSum===0}}"
+/>

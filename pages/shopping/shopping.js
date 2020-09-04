@@ -168,6 +168,13 @@ Page({
     }
   },
 
+  // 提交订单
+  onSubmit: function(){
+    wx.navigateTo({
+      url: '/pages/pay/pay',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
