@@ -37,9 +37,9 @@ Page({
     const { cartList, checkedIds } = this.data
     cartList.forEach(item => {
       if(e.detail){
-        checkedIds[item.Id] = true
+        checkedIds[item.GoodsId] = true
       }else {
-        checkedIds[item.Id] = false
+        checkedIds[item.GoodsId] = false
       }
     })  
     this.setData({checked: e.detail, checkedIds }, function(){
@@ -52,10 +52,10 @@ Page({
     const { item } = e.target.dataset
     const { checkedIds } = this.data
     
-    if(!checkedIds[item.Id]){
-      checkedIds[item.Id] = true
+    if(!checkedIds[item.GoodsId]){
+      checkedIds[item.GoodsId] = true
     }else {
-      checkedIds[item.Id] = false
+      checkedIds[item.GoodsId] = false
     }
     this.setData({checkedIds}, function(){
       this.setCheckAll()
@@ -83,7 +83,7 @@ Page({
     const { checkedIds, cartList } = this.data
     let sum = 0
     cartList.forEach(item => {
-      if(checkedIds[item.Id]){ // 是选中状态
+      if(checkedIds[item.GoodsId]){ // 是选中状态
         sum += item.GoodsPriceShop * item.GoodsNumber
       }
     })
@@ -117,7 +117,7 @@ Page({
           icon: 'none'
         })
         // 删除对象中选择的属性
-        delete checkedIds[item.Id]
+        delete checkedIds[item.GoodsId]
         // 刷新购物车
         cart.getCartList().then(res => {
           this.setData({cartList: res.data.lists, checkedIds})

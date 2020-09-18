@@ -1,0 +1,18 @@
+.float {
+  background-color: #fff;
+  border-radius: 50%;
+}
+.img-plus-style {
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 30rpx;
+  opacity: 0.7
+}
+.zindex{
+  z-index: 100
+}
+.yc{
+  opacity: 0
+}

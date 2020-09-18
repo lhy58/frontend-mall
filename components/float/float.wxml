@@ -1,0 +1,4 @@
+<view class="float img-plus-style">
+    <contact-button open-type="contact" class="img-plus-style zindex yc"></contact-button>
+    <image src="../../assets/images/cust-serve.png" class="img-plus-style"></image>
+</view>

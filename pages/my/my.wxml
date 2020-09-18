@@ -9,7 +9,7 @@
       <view class="flex paddingTop" bindtap="onClickAll">
         <text class="bd_name">我的订单</text>
         <text class="bd_link">查看全部订单</text>
-        <van-icon name='arrow'/>
+        <van-icon name='arrow' color="#969799"/>
       </view>
       <view class="flex marginTop">
         <view class="flex_item" data-type='1' bindtap="onClickTo">
@@ -33,7 +33,18 @@
     <view class='box_2'>
       <van-cell-group>
         <van-cell title="收货地址" url="/pages/addressList/addressList" icon="location-o" is-link />
-        <van-cell title="我的客服" icon="location-o" is-link value="工作时间 9:00-22:00" />
+        <!-- <van-cell title="我的客服" icon="location-o" is-link value="工作时间 9:00-22:00">
+          <contact-button slot="value" open-type="contact" class="btn"></contact-button>
+        </van-cell> -->
+        <view class="cell-serve">
+          <van-icon size="30rpx" name='location-o'/>
+          <label class="cell-title">我的客服</label>
+          <view class="cell-end">
+            <label class="cell-text">工作时间 9:00-22:00</label>
+            <van-icon size="30rpx" color="#969799" name='arrow'/>
+          </view>
+          <button open-type="contact" class="btn"></button>
+        </view>
       </van-cell-group>
     </view>
   </view>

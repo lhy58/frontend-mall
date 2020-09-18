@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "首页",
   "usingComponents": {
-    "lists": "../../components/lists/lists"
+    "lists": "../../components/lists/lists",
+    "float": "../../components/float/float"
   }
 }

@@ -68,12 +68,12 @@ Page({
   onDelete: function (e) {
     const _that = this
     const { item } = e.target.dataset
-    if(item.Status === 1){
-      return wx.showToast({
-        title: '当前默认地址，不可删除',
-        icon: 'none'
-      })
-    }
+    // if(item.Status === 1){
+    //   return wx.showToast({
+    //     title: '当前默认地址，不可删除',
+    //     icon: 'none'
+    //   })
+    // }
     wx.showModal({
       title: '提示',
       content: '您确定要删除该地址？',
@@ -92,6 +92,12 @@ Page({
   onCheckAll: function(e){
     const { item } = e.target.dataset
     const { list } = this.data
+    if(item.Status === 1){
+      return  wx.showToast({
+        title: '已经默认勾选！',
+        icon: 'none'
+      })
+    }
     wx.showLoading({
       title: '加载中...',
     })

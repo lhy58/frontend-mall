@@ -8,9 +8,12 @@
       url="/pages/addressList/addressList"
       border="{{ false }}"
     >
-      <view slot="title">
-        <view class="van-cell-text">旧城 13245124546</view>
-        <van-tag type="danger">爱的世界圣诞节疯狂送积分扣水电费</van-tag>
+      <view wx:if="{{address.Status === 1}}" slot="title">
+        <view class="van-cell-text">{{address.UserName}} {{address.ReceiverTelephone}}</view>
+        <van-tag type="danger">{{address.ReceiverAddrDetail}}</van-tag>
+      </view>
+      <view wx:else slot="title">
+        <view class="van-cell-text">添加收货地址</view>
       </view>
     </van-cell>
   </van-cell-group>
@@ -36,7 +39,9 @@
 <van-submit-bar
   label="应付金额"
   price="{{ 12323 }}"
-  button-text="立即支付"
+  button-text="{{address.Status === 1? '立即支付':'请选择地址'}}"
   bind:submit="onSubmit"
   disabled="{{priceSum===0}}"
+  button-type="{{address.Status === 1? 'danger':''}}"
+  button-class='btmBg'
 />

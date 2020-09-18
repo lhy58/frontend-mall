@@ -75,3 +75,7 @@
   display: inline-block;
   margin-top: 10rpx;
 }
+.btmBg {
+  background-color: #b9b5b5;
+  color: #888;
+}

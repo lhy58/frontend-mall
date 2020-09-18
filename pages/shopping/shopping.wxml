@@ -3,9 +3,9 @@
     <block wx:for="{{cartList}}" wx:key="Id">
       <van-swipe-cell right-width="{{ 65 }}" custom-class="cell">
         <van-cell-group custom-class="group flex">
-          <van-checkbox value="{{ checkedIds[item.Id] }}" checked-color="#ee0a24" data-item="{{item}}" bind:change="onCheckbox" />
+          <van-checkbox value="{{ checkedIds[item.GoodsId] }}" checked-color="#ee0a24" data-item="{{item}}" bind:change="onCheckbox" />
           <view class="group_right flex">
-            <image class="group_img" src='../../assets/images/empty.jpg' />
+            <image class="group_img" src='{{item.GoodsPictureUrl}}' />
             <view class="group_bd">
               <view class="group_name">{{item.GoodsName}}</view>
               <view class="tag">200ml</view>
